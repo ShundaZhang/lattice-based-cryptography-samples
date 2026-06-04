@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Toy LWE threshold decoding</title>
+  <desc id="desc">A modular number line showing bit 0 near zero and bit 1 near q over 2, with noise tolerance.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="900" height="420" fill="#ffffff"/>
+  <text x="55" y="55" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#0f172a">LWE 解密：把相位看成接近 0 还是接近 q/2</text>
+  <line x1="90" y1="210" x2="810" y2="210" stroke="#334155" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="140" y1="190" x2="140" y2="230" stroke="#0f172a" stroke-width="3"/>
+  <line x1="475" y1="190" x2="475" y2="230" stroke="#0f172a" stroke-width="3"/>
+  <line x1="810" y1="190" x2="810" y2="230" stroke="#0f172a" stroke-width="3"/>
+  <text x="132" y="265" font-family="Arial, sans-serif" font-size="20" fill="#0f172a">0</text>
+  <text x="452" y="265" font-family="Arial, sans-serif" font-size="20" fill="#0f172a">q/2</text>
+  <text x="800" y="265" font-family="Arial, sans-serif" font-size="20" fill="#0f172a">q</text>
+
+  <rect x="105" y="155" width="170" height="42" rx="21" fill="#bbf7d0" fill-opacity="0.85"/>
+  <rect x="390" y="155" width="170" height="42" rx="21" fill="#fed7aa" fill-opacity="0.9"/>
+  <text x="122" y="145" font-family="Arial, sans-serif" font-size="18" fill="#047857">bit 0 的安全区</text>
+  <text x="402" y="145" font-family="Arial, sans-serif" font-size="18" fill="#c2410c">bit 1 的安全区</text>
+
+  <circle cx="168" cy="210" r="8" fill="#059669"/>
+  <circle cx="224" cy="210" r="8" fill="#059669"/>
+  <circle cx="444" cy="210" r="8" fill="#f97316"/>
+  <circle cx="514" cy="210" r="8" fill="#f97316"/>
+  <path d="M168 318 C204 285, 232 282, 270 315" fill="none" stroke="#059669" stroke-width="3"/>
+  <text x="130" y="350" font-family="Arial, sans-serif" font-size="18" fill="#047857">噪声小：仍然解成 0</text>
+  <path d="M444 318 C480 285, 525 282, 560 315" fill="none" stroke="#f97316" stroke-width="3"/>
+  <text x="400" y="350" font-family="Arial, sans-serif" font-size="18" fill="#c2410c">噪声小：仍然解成 1</text>
+  <text x="600" y="330" font-family="Arial, sans-serif" font-size="18" fill="#475569">噪声太大会跨过阈值，导致解密失败。</text>
+</svg>
+

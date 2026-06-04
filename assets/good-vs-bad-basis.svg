@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Good and bad bases for the same lattice</title>
+  <desc id="desc">Two panels compare a short nearly orthogonal basis with a long skewed basis for the same lattice.</desc>
+  <defs>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#059669"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#ea580c"/>
+    </marker>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M 42 0 L 0 0 0 42" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="520" fill="#ffffff"/>
+  <text x="70" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a">好基：短、接近正交</text>
+  <text x="520" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#0f172a">坏基：长、很倾斜</text>
+
+  <rect x="55" y="80" width="350" height="330" fill="url(#grid)" stroke="#cbd5e1"/>
+  <rect x="495" y="80" width="350" height="330" fill="url(#grid)" stroke="#cbd5e1"/>
+
+  <g fill="#111827">
+    <g transform="translate(230 245)">
+      <circle cx="-84" cy="-84" r="4"/><circle cx="0" cy="-84" r="4"/><circle cx="84" cy="-84" r="4"/>
+      <circle cx="-84" cy="0" r="4"/><circle cx="0" cy="0" r="5" fill="#059669"/><circle cx="84" cy="0" r="4"/>
+      <circle cx="-84" cy="84" r="4"/><circle cx="0" cy="84" r="4"/><circle cx="84" cy="84" r="4"/>
+      <circle cx="-168" cy="0" r="4"/><circle cx="168" cy="0" r="4"/><circle cx="0" cy="-168" r="4"/><circle cx="0" cy="168" r="4"/>
+      <line x1="0" y1="0" x2="84" y2="0" stroke="#059669" stroke-width="5" marker-end="url(#arrow-green)"/>
+      <line x1="0" y1="0" x2="0" y2="-84" stroke="#059669" stroke-width="5" marker-end="url(#arrow-green)"/>
+    </g>
+  </g>
+
+  <g fill="#111827">
+    <g transform="translate(670 245)">
+      <circle cx="-84" cy="-84" r="4"/><circle cx="0" cy="-84" r="4"/><circle cx="84" cy="-84" r="4"/>
+      <circle cx="-84" cy="0" r="4"/><circle cx="0" cy="0" r="5" fill="#ea580c"/><circle cx="84" cy="0" r="4"/>
+      <circle cx="-84" cy="84" r="4"/><circle cx="0" cy="84" r="4"/><circle cx="84" cy="84" r="4"/>
+      <circle cx="-168" cy="0" r="4"/><circle cx="168" cy="0" r="4"/><circle cx="0" cy="-168" r="4"/><circle cx="0" cy="168" r="4"/>
+      <line x1="0" y1="0" x2="84" y2="0" stroke="#ea580c" stroke-width="5" marker-end="url(#arrow-orange)"/>
+      <line x1="0" y1="0" x2="168" y2="-84" stroke="#ea580c" stroke-width="5" marker-end="url(#arrow-orange)"/>
+    </g>
+  </g>
+
+  <text x="75" y="455" font-family="Arial, sans-serif" font-size="18" fill="#334155">最近点问题比较容易近似：坐标方向清楚。</text>
+  <text x="515" y="455" font-family="Arial, sans-serif" font-size="18" fill="#334155">同样的点集，但坐标方向让“最近点”很难看出来。</text>
+</svg>
+

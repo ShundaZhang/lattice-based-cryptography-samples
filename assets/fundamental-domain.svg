@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Fundamental parallelogram and determinant</title>
+  <desc id="desc">The area of a fundamental parallelogram is the absolute determinant of the basis matrix.</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#dc2626"/>
+    </marker>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="520" fill="#ffffff"/>
+  <rect x="40" y="55" width="560" height="385" fill="url(#grid)" stroke="#cbd5e1"/>
+  <g transform="translate(200 330)">
+    <polygon points="0,0 200,-80 280,80 80,160" fill="#bfdbfe" fill-opacity="0.55" stroke="#2563eb" stroke-width="3"/>
+    <line x1="0" y1="0" x2="200" y2="-80" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-blue)"/>
+    <line x1="0" y1="0" x2="80" y2="160" stroke="#dc2626" stroke-width="5" marker-end="url(#arrow-red)"/>
+    <circle cx="0" cy="0" r="5" fill="#111827"/>
+    <circle cx="200" cy="-80" r="5" fill="#111827"/>
+    <circle cx="80" cy="160" r="5" fill="#111827"/>
+    <circle cx="280" cy="80" r="5" fill="#111827"/>
+    <text x="210" y="-92" font-family="Arial, sans-serif" font-size="20" fill="#2563eb">b1</text>
+    <text x="88" y="176" font-family="Arial, sans-serif" font-size="20" fill="#dc2626">b2</text>
+  </g>
+  <rect x="640" y="88" width="220" height="260" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="660" y="130" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a">基本域</text>
+  <text x="660" y="172" font-family="Arial, sans-serif" font-size="18" fill="#334155">由 b1 和 b2 围成</text>
+  <text x="660" y="202" font-family="Arial, sans-serif" font-size="18" fill="#334155">的平行四边形。</text>
+  <text x="660" y="248" font-family="Arial, sans-serif" font-size="18" fill="#334155">面积 = |det(B)|</text>
+  <text x="660" y="285" font-family="Arial, sans-serif" font-size="18" fill="#334155">面积越大，</text>
+  <text x="660" y="315" font-family="Arial, sans-serif" font-size="18" fill="#334155">格点越稀疏。</text>
+  <text x="60" y="485" font-family="Arial, sans-serif" font-size="18" fill="#475569">determinant 是把“基向量张开的体积”变成一个数。</text>
+</svg>
+

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">SVP, CVP and BDD intuition</title>
+  <desc id="desc">A diagram showing shortest vector, target point, nearest lattice point, and bounded decoding radius.</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#2563eb"/>
+    </marker>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="520" fill="#ffffff"/>
+  <rect x="40" y="45" width="560" height="405" fill="url(#grid)" stroke="#cbd5e1"/>
+  <g fill="#111827">
+    <circle cx="150" cy="350" r="4"/><circle cx="230" cy="330" r="4"/><circle cx="310" cy="310" r="4"/><circle cx="390" cy="290" r="4"/><circle cx="470" cy="270" r="4"/>
+    <circle cx="130" cy="270" r="4"/><circle cx="210" cy="250" r="4"/><circle cx="290" cy="230" r="5" fill="#059669"/><circle cx="370" cy="210" r="4"/><circle cx="450" cy="190" r="4"/>
+    <circle cx="110" cy="190" r="4"/><circle cx="190" cy="170" r="4"/><circle cx="270" cy="150" r="4"/><circle cx="350" cy="130" r="4"/><circle cx="430" cy="110" r="4"/>
+    <circle cx="170" cy="430" r="4"/><circle cx="250" cy="410" r="4"/><circle cx="330" cy="390" r="4"/><circle cx="410" cy="370" r="4"/><circle cx="490" cy="350" r="4"/>
+  </g>
+  <line x1="290" y1="230" x2="210" y2="250" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow-blue)"/>
+  <text x="143" y="246" font-family="Arial, sans-serif" font-size="18" fill="#2563eb">SVP: 找最短非零向量</text>
+
+  <circle cx="345" cy="245" r="8" fill="#f97316"/>
+  <circle cx="290" cy="230" r="52" fill="none" stroke="#f97316" stroke-width="3" stroke-dasharray="8 7"/>
+  <line x1="345" y1="245" x2="290" y2="230" stroke="#f97316" stroke-width="3"/>
+  <text x="356" y="250" font-family="Arial, sans-serif" font-size="18" fill="#f97316">目标点 t</text>
+  <text x="320" y="335" font-family="Arial, sans-serif" font-size="18" fill="#f97316">CVP: 找最近格点</text>
+  <text x="320" y="364" font-family="Arial, sans-serif" font-size="18" fill="#f97316">BDD: 已知 t 很接近某个格点</text>
+
+  <rect x="640" y="80" width="220" height="295" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="660" y="122" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#0f172a">三个问题</text>
+  <text x="660" y="168" font-family="Arial, sans-serif" font-size="18" fill="#334155">SVP: 原点附近</text>
+  <text x="660" y="198" font-family="Arial, sans-serif" font-size="18" fill="#334155">最短的非零点。</text>
+  <text x="660" y="244" font-family="Arial, sans-serif" font-size="18" fill="#334155">CVP: 任意目标点</text>
+  <text x="660" y="274" font-family="Arial, sans-serif" font-size="18" fill="#334155">最近的格点。</text>
+  <text x="660" y="320" font-family="Arial, sans-serif" font-size="18" fill="#334155">BDD: 噪声很小，</text>
+  <text x="660" y="350" font-family="Arial, sans-serif" font-size="18" fill="#334155">可以解码回来。</text>
+</svg>
+

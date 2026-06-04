@@ -3,9 +3,11 @@
 这个仓库是一份面向入门到进阶的格基密码学学习材料。它包含：
 
 - 系统学习路线：从整数格、困难问题、LLL/BKZ，到 LWE、SIS、NTRU、ML-KEM、ML-DSA 和全同态加密。
+- 初学者数学基础：补齐向量、矩阵、点积、范数、行列式、模运算、噪声这些必要前置知识。
+- 图形化解释：用 SVG 和 Mermaid 图说明格、好基/坏基、基本域、SVP/CVP/BDD、LWE 解密阈值。
 - 概念与应用清单：帮助你把数学对象、算法、密码构造和真实系统联系起来。
 - 纯 Python 示例：不用第三方依赖，直接运行小规模 LLL、Toy LWE 加密/解密、Tiny LWE 暴力攻击。
-- 习题与答案：覆盖计算题、证明思路题、实现题和安全直觉题。
+- 习题与答案：45 道题，覆盖计算题、证明思路题、实现题和安全直觉题。
 
 > 安全提示：本仓库里的密码代码都是教学 toy implementation，参数极小，也没有常数时间实现、KEM transform、拒绝采样、侧信道防护或生产级随机数处理。不要用于任何真实安全场景。
 
@@ -30,12 +32,21 @@ python3 -m pip install -e .
 
 ```text
 .
+├── assets/
+│   ├── fundamental-domain.svg
+│   ├── good-vs-bad-basis.svg
+│   ├── lattice-basis.svg
+│   ├── lwe-decoding.svg
+│   ├── lwe-samples.svg
+│   └── svp-cvp-bdd.svg
 ├── docs/
 │   ├── applications.md       # 应用场景与真实标准
 │   ├── answers.md            # 习题答案
 │   ├── concepts.md           # 核心概念清单
 │   ├── exercises.md          # 习题
-│   └── learning-guide.md     # 8 周学习路径
+│   ├── learning-guide.md     # 8 周学习路径
+│   ├── math-primer.md        # 初学者数学基础
+│   └── visual-guide.md       # 图形化概念解释
 ├── examples/
 │   ├── 01_lattice_basics.py
 │   ├── 02_lll_reduction.py
@@ -56,6 +67,34 @@ python3 -m pip install -e .
 
 1. 很多格问题在高维下没有已知高效经典或量子算法。
 2. 格结构能支持丰富构造：KEM、公钥加密、数字签名、身份基加密、属性基加密、全同态加密和零知识证明。
+
+## 初学者推荐顺序
+
+如果你是第一次学 lattice-based cryptography，建议按这个顺序走：
+
+1. 看推荐视频，先建立图像直觉。
+2. 读 [docs/math-primer.md](docs/math-primer.md)，补线性代数和模运算。
+3. 读 [docs/visual-guide.md](docs/visual-guide.md)，用图理解格、基、SVP/CVP/BDD 和 LWE。
+4. 跑 `examples/01_lattice_basics.py` 和 `examples/02_lll_reduction.py`。
+5. 读 [docs/concepts.md](docs/concepts.md)，把术语串起来。
+6. 跑 `examples/03_toy_lwe_encrypt.py` 和 `examples/04_tiny_lwe_attack.py`。
+7. 做 [docs/exercises.md](docs/exercises.md)，再对照 [docs/answers.md](docs/answers.md)。
+
+## 推荐 YouTube 视频
+
+首推：
+
+[Lattice-based cryptography: The tricky math of dots](https://youtu.be/QDdOoYdb748)
+
+推荐理由：
+
+- 时长短，适合第一次接触。
+- 图形化解释强，重点讲 basis vectors、同一个格的多组基、SVP、CVP 和 GGH 加密直觉。
+- 先建立“点阵 + 好基/坏基 + 最近点困难”的画面感，再读 LWE/Module-LWE 会轻松很多。
+
+如果你想系统补课，再看 Alfred Menezes 的公开课程：
+
+[Lattice-Based Cryptography - Cryptography 101](https://cryptography101.ca/lattice-based-cryptography/)
 
 ## 必须掌握的概念地图
 
@@ -119,6 +158,20 @@ python3 -m pip install -e .
 
 更完整的路线见 [docs/learning-guide.md](docs/learning-guide.md)。
 
+## 图形化导览
+
+核心图解见 [docs/visual-guide.md](docs/visual-guide.md)，包括：
+
+- 二维格和基向量
+- 好基与坏基
+- 基本域和 determinant
+- SVP / CVP / BDD
+- LWE 样本生成
+- Toy LWE 解密阈值
+- LWE 加密数据流
+- LLL 工作循环
+- KEM 接口
+
 ## 习题入口
 
 - 习题：[docs/exercises.md](docs/exercises.md)
@@ -130,6 +183,15 @@ python3 -m pip install -e .
 - NIST FIPS 204: Module-Lattice-Based Digital Signature Standard, ML-DSA。
 - NIST FIPS 205: Stateless Hash-Based Digital Signature Standard, SLH-DSA。它不是格基方案，但属于 NIST PQC 签名标准组合。
 
+## 公开学习资料
+
+- [A Gentle Introduction to Lattice-Based Cryptography](https://cryptography101.ca/wp-content/uploads/2026/02/Lattice-cryptgraphy.pdf)，Alfred Menezes 的入门讲义。
+- [Lattice-Based Cryptography - Cryptography 101](https://cryptography101.ca/lattice-based-cryptography/)，视频、讲义和 slides，覆盖 SIS、LWE、lattices、Ring/Module 结构。
+- [CSE 599: Lattices and Lattice-based Cryptography](https://courses.cs.washington.edu/courses/cse599s/22sp/)，华盛顿大学课程页面，适合进阶参考。
+- [Lattice Based Cryptography for Beginners](https://eprint.iacr.org/2015/938)，IACR ePrint 上面向初学者的讲义。
+- [A quick introduction to Lattice Cryptography](https://cjeudy.github.io/videos/a_quick_intro_to_lattice_cryptography)，短视频配套页面，适合快速获得整体景观。
+- [NIST PQC FIPS approval](https://csrc.nist.gov/News/2024/postquantum-cryptography-fips-approved)，NIST 后量子标准官方公告。
+
 ## 学习建议
 
 不要先追求把生产级 Kyber 或 Dilithium 从头实现出来。更稳的路线是：
@@ -138,4 +200,3 @@ python3 -m pip install -e .
 2. 再能手写 LLL 的关键步骤。
 3. 然后用 toy LWE 解释正确性、安全性和参数失败。
 4. 最后阅读标准文档和参考实现，补齐常数时间、采样、压缩、序列化、KEM transform 等工程细节。
-

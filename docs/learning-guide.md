@@ -5,8 +5,9 @@
 建议第一天先做三件事：
 
 1. 看 README 中推荐的 YouTube 视频，先建立图像直觉。
-2. 读 [math-primer.md](math-primer.md)，补齐向量、矩阵、点积、范数、行列式和模运算。
-3. 读 [visual-guide.md](visual-guide.md)，把格、好基/坏基、SVP/CVP/BDD、LWE 样本和解密阈值看成图。
+2. 读 [intuitive-explanation.md](intuitive-explanation.md)，用最通俗的话理解核心原理。
+3. 读 [math-primer.md](math-primer.md)，补齐向量、矩阵、点积、范数、行列式和模运算。
+4. 读 [visual-guide.md](visual-guide.md)，把格、好基/坏基、SVP/CVP/BDD、LWE 样本和解密阈值看成图。
 
 ## 第 0 阶段：准备知识
 
@@ -18,6 +19,7 @@
 
 阅读：
 
+- [intuitive-explanation.md](intuitive-explanation.md)
 - [math-primer.md](math-primer.md)
 - [visual-guide.md](visual-guide.md)
 

@@ -33,9 +33,12 @@ python3 -m pip install -e .
 ```text
 .
 ├── assets/
+│   ├── attacker-vs-user.png
 │   ├── fundamental-domain.svg
 │   ├── good-vs-bad-basis.svg
 │   ├── lattice-basis.svg
+│   ├── lattice-core-intuition.png
+│   ├── lwe-noise-intuition.png
 │   ├── lwe-decoding.svg
 │   ├── lwe-samples.svg
 │   └── svp-cvp-bdd.svg
@@ -44,6 +47,7 @@ python3 -m pip install -e .
 │   ├── answers.md            # 习题答案
 │   ├── concepts.md           # 核心概念清单
 │   ├── exercises.md          # 习题
+│   ├── intuitive-explanation.md # 最通俗的核心原理解释
 │   ├── learning-guide.md     # 8 周学习路径
 │   ├── math-primer.md        # 初学者数学基础
 │   └── visual-guide.md       # 图形化概念解释
@@ -73,12 +77,13 @@ python3 -m pip install -e .
 如果你是第一次学 lattice-based cryptography，建议按这个顺序走：
 
 1. 看推荐视频，先建立图像直觉。
-2. 读 [docs/math-primer.md](docs/math-primer.md)，补线性代数和模运算。
-3. 读 [docs/visual-guide.md](docs/visual-guide.md)，用图理解格、基、SVP/CVP/BDD 和 LWE。
-4. 跑 `examples/01_lattice_basics.py` 和 `examples/02_lll_reduction.py`。
-5. 读 [docs/concepts.md](docs/concepts.md)，把术语串起来。
-6. 跑 `examples/03_toy_lwe_encrypt.py` 和 `examples/04_tiny_lwe_attack.py`。
-7. 做 [docs/exercises.md](docs/exercises.md)，再对照 [docs/answers.md](docs/answers.md)。
+2. 读 [docs/intuitive-explanation.md](docs/intuitive-explanation.md)，先用最通俗的话理解“没钥匙难，有钥匙易”。
+3. 读 [docs/math-primer.md](docs/math-primer.md)，补线性代数和模运算。
+4. 读 [docs/visual-guide.md](docs/visual-guide.md)，用图理解格、基、SVP/CVP/BDD 和 LWE。
+5. 跑 `examples/01_lattice_basics.py` 和 `examples/02_lll_reduction.py`。
+6. 读 [docs/concepts.md](docs/concepts.md)，把术语串起来。
+7. 跑 `examples/03_toy_lwe_encrypt.py` 和 `examples/04_tiny_lwe_attack.py`。
+8. 做 [docs/exercises.md](docs/exercises.md)，再对照 [docs/answers.md](docs/answers.md)。
 
 ## 推荐 YouTube 视频
 
@@ -159,6 +164,12 @@ python3 -m pip install -e .
 更完整的路线见 [docs/learning-guide.md](docs/learning-guide.md)。
 
 ## 图形化导览
+
+最通俗的核心原理解释见 [docs/intuitive-explanation.md](docs/intuitive-explanation.md)，配有三张 AI 风格概念图：
+
+- 高维点阵里的最近点
+- 攻击者视角和合法用户视角
+- LWE 的线性方程与小噪声
 
 核心图解见 [docs/visual-guide.md](docs/visual-guide.md)，包括：
 

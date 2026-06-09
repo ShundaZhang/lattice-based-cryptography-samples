@@ -159,7 +159,7 @@ python3 -m pip install -e .
 
 ## CTF 与密码分析
 
-如果你的目标是打 CTF，建议在学完 LLL 后读 [docs/ctf-lattice-guide.md](docs/ctf-lattice-guide.md)。它基于作者私有 `ShundaZhang/htb` 仓库中的 HTB crypto 解题笔记整理，但已公开化重写，不需要访问原私有仓库，覆盖：
+如果你的目标是打 CTF，建议在学完 LLL 后读 [docs/ctf-lattice-guide.md](docs/ctf-lattice-guide.md)。它基于 HTB crypto 题目的常见格攻击思路整理，原题可在 [Hack The Box](https://www.hackthebox.com/) 或 [HTB Challenges](https://app.hackthebox.com/challenges) 自行搜索，覆盖：
 
 - Merkle-Hellman 背包和子集和格。
 - ECDSA/DSA nonce bit 泄漏与 Hidden Number Problem。

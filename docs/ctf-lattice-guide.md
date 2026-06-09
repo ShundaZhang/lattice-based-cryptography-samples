@@ -9,9 +9,13 @@ CTF 里的“格密码”通常有两种含义：
 
 > 已知一个整数关系的大部分，只剩一个很小的未知量。把这个关系嵌入格里，用 LLL 找出短向量或小根。
 
-本页基于作者私有 `ShundaZhang/htb` 仓库中 HTB crypto 解题笔记的本地稀疏扫描整理。扫描关键词包括 `lattice`、`LLL`、`small_roots`、`Coppersmith`、`knapsack`、`fpylll`、`格基`、`格密码` 等。中文关键词没有命中；`crypto_cryptoconundrum` 因连续字母误触发 `LLL`，已剔除。
+本页基于 HTB crypto 题目的常见格攻击思路整理。覆盖关键词包括 `lattice`、`LLL`、`small_roots`、`Coppersmith`、`knapsack`、`fpylll`、`格基`、`格密码` 等；其中 `crypto_cryptoconundrum` 这类非格题因为连续字母误触发 `LLL`，不纳入本页。
 
-原始 HTB 仓库是私有的，所以本页不会要求读者访问其中的路径，也不会把 flag、长常数和完整解题脚本原样发布到这个 public 教学仓库。下面每个案例都改写成公开可读的“题面抽象 + 建模 + 解法步骤 + 验证点”，读者只看本页和本仓库示例也能学到方法。
+HTB 原题可以在 Hack The Box 网站自行搜索。部分题目可能属于 retired challenges、活动题或付费内容，是否可见取决于 HTB 平台当前状态和账号权限。本页不会发布 flag、长常数或完整解题脚本；每个案例都改写成公开可读的“题面抽象 + 建模 + 解法步骤 + 验证点”，读者只看本页和本仓库示例也能学到方法。
+
+## 关于 HTB
+
+[Hack The Box](https://www.hackthebox.com/)（HTB）是一个面向网络安全学习、攻防训练和 CTF 挑战的平台，提供靶机、挑战题、学院课程、比赛和企业训练内容。Crypto 题一般可以从 [HTB Challenges](https://app.hackthebox.com/challenges) 入口查找，搜索题名即可找到可用题目。
 
 ## 一张图看 CTF 中的 LLL
 
@@ -64,7 +68,7 @@ flowchart LR
 
 ## 如何阅读这些案例
 
-下面的题名来自作者私有 HTB 解题笔记，但每一节都按公开材料重写。读者不需要知道原始端口、原始 flag、完整常数或私有脚本，只需要关注四件事：
+下面的题名来自 HTB crypto 题目。读者不需要知道原始端口、原始 flag 或完整常数，只需要关注四件事：
 
 1. 题面泄漏了什么。
 2. 未知量为什么“小”。

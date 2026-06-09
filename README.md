@@ -7,6 +7,7 @@
 - 图形化解释：用 SVG 和 Mermaid 图说明格、好基/坏基、基本域、SVP/CVP/BDD、LWE 解密阈值。
 - 概念与应用清单：帮助你把数学对象、算法、密码构造和真实系统联系起来。
 - 纯 Python 示例：不用第三方依赖，直接运行小规模 LLL、Toy LWE 加密/解密、Tiny LWE 暴力攻击。
+- CTF 视角：总结 HTB 中常见的 LLL、Coppersmith、背包、HNP、nonce 泄漏题型和解法套路。
 - 习题与答案：45 道题，覆盖计算题、证明思路题、实现题和安全直觉题。
 
 > 安全提示：本仓库里的密码代码都是教学 toy implementation，参数极小，也没有常数时间实现、KEM transform、拒绝采样、侧信道防护或生产级随机数处理。不要用于任何真实安全场景。
@@ -19,6 +20,7 @@ python3 examples/01_lattice_basics.py
 python3 examples/02_lll_reduction.py
 python3 examples/03_toy_lwe_encrypt.py
 python3 examples/04_tiny_lwe_attack.py
+python3 examples/05_ctf_knapsack_lll.py
 python3 -m unittest discover -s tests
 ```
 
@@ -46,6 +48,7 @@ python3 -m pip install -e .
 │   ├── applications.md       # 应用场景与真实标准
 │   ├── answers.md            # 习题答案
 │   ├── concepts.md           # 核心概念清单
+│   ├── ctf-lattice-guide.md  # 格相关 CTF 题型与 HTB 总结
 │   ├── exercises.md          # 习题
 │   ├── intuitive-explanation.md # 最通俗的核心原理解释
 │   ├── learning-guide.md     # 8 周学习路径
@@ -55,7 +58,8 @@ python3 -m pip install -e .
 │   ├── 01_lattice_basics.py
 │   ├── 02_lll_reduction.py
 │   ├── 03_toy_lwe_encrypt.py
-│   └── 04_tiny_lwe_attack.py
+│   ├── 04_tiny_lwe_attack.py
+│   └── 05_ctf_knapsack_lll.py
 ├── lattice_crypto/
 │   ├── attacks.py
 │   ├── integer_lattice.py
@@ -83,7 +87,8 @@ python3 -m pip install -e .
 5. 跑 `examples/01_lattice_basics.py` 和 `examples/02_lll_reduction.py`。
 6. 读 [docs/concepts.md](docs/concepts.md)，把术语串起来。
 7. 跑 `examples/03_toy_lwe_encrypt.py` 和 `examples/04_tiny_lwe_attack.py`。
-8. 做 [docs/exercises.md](docs/exercises.md)，再对照 [docs/answers.md](docs/answers.md)。
+8. 读 [docs/ctf-lattice-guide.md](docs/ctf-lattice-guide.md)，理解 CTF 中 LLL/Coppersmith 的攻击视角。
+9. 做 [docs/exercises.md](docs/exercises.md)，再对照 [docs/answers.md](docs/answers.md)。
 
 ## 推荐 YouTube 视频
 
@@ -149,6 +154,21 @@ python3 -m pip install -e .
 - 隐私计算：安全聚合、联邦学习、私有集合相关协议。
 - 密码分析：用 LLL/BKZ 攻击弱参数 RSA、背包密码、ECDSA nonce 泄漏、Hidden Number Problem。
 - 高级密码：属性基加密、身份基加密、函数加密、零知识证明中的格承诺。
+
+## CTF 与密码分析
+
+如果你的目标是打 CTF，建议在学完 LLL 后读 [docs/ctf-lattice-guide.md](docs/ctf-lattice-guide.md)。它基于 `ShundaZhang/htb` 仓库中的 HTB crypto 题目整理，覆盖：
+
+- Merkle-Hellman 背包和子集和格。
+- ECDSA/DSA nonce bit 泄漏与 Hidden Number Problem。
+- RSA 已知高位因子、已知明文前缀、short pad、partial `dp/dq`。
+- 多变量 small roots、JSON 模同余碰撞、二维 LLL 恢复模分式。
+
+配套 toy 示例：
+
+```bash
+python3 examples/05_ctf_knapsack_lll.py
+```
 
 ## 推荐学习路径
 

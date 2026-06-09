@@ -126,12 +126,18 @@ v - <s, u> = bit * floor(q/2) + small_noise mod q
 
 ```bash
 python3 examples/04_tiny_lwe_attack.py
+python3 examples/05_ctf_knapsack_lll.py
 ```
 
 思考：
 
 - 为什么 `q^n` 会迅速爆炸？
 - 增大噪声为什么既能提高安全性，又可能造成解密失败？
+- 为什么 CTF 里的 RSA、DSA、背包题经常会被转化成 LLL 或 Coppersmith 问题？
+
+延伸阅读：
+
+- [ctf-lattice-guide.md](ctf-lattice-guide.md)：基于 HTB crypto 题目整理的格相关 CTF 题型、建模和解法总结。
 
 ## 第 6 周：Ring-LWE、Module-LWE 和 NTRU
 

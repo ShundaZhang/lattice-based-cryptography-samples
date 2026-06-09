@@ -21,6 +21,7 @@ python3 examples/02_lll_reduction.py
 python3 examples/03_toy_lwe_encrypt.py
 python3 examples/04_tiny_lwe_attack.py
 python3 examples/05_ctf_knapsack_lll.py
+python3 examples/06_ctf_rational_reconstruction_lll.py
 python3 -m unittest discover -s tests
 ```
 
@@ -59,7 +60,8 @@ python3 -m pip install -e .
 │   ├── 02_lll_reduction.py
 │   ├── 03_toy_lwe_encrypt.py
 │   ├── 04_tiny_lwe_attack.py
-│   └── 05_ctf_knapsack_lll.py
+│   ├── 05_ctf_knapsack_lll.py
+│   └── 06_ctf_rational_reconstruction_lll.py
 ├── lattice_crypto/
 │   ├── attacks.py
 │   ├── integer_lattice.py
@@ -157,7 +159,7 @@ python3 -m pip install -e .
 
 ## CTF 与密码分析
 
-如果你的目标是打 CTF，建议在学完 LLL 后读 [docs/ctf-lattice-guide.md](docs/ctf-lattice-guide.md)。它基于 `ShundaZhang/htb` 仓库中的 HTB crypto 题目整理，覆盖：
+如果你的目标是打 CTF，建议在学完 LLL 后读 [docs/ctf-lattice-guide.md](docs/ctf-lattice-guide.md)。它基于作者私有 `ShundaZhang/htb` 仓库中的 HTB crypto 解题笔记整理，但已公开化重写，不需要访问原私有仓库，覆盖：
 
 - Merkle-Hellman 背包和子集和格。
 - ECDSA/DSA nonce bit 泄漏与 Hidden Number Problem。
@@ -168,6 +170,7 @@ python3 -m pip install -e .
 
 ```bash
 python3 examples/05_ctf_knapsack_lll.py
+python3 examples/06_ctf_rational_reconstruction_lll.py
 ```
 
 ## 推荐学习路径

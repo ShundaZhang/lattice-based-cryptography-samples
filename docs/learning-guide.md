@@ -127,6 +127,7 @@ v - <s, u> = bit * floor(q/2) + small_noise mod q
 ```bash
 python3 examples/04_tiny_lwe_attack.py
 python3 examples/05_ctf_knapsack_lll.py
+python3 examples/06_ctf_rational_reconstruction_lll.py
 ```
 
 思考：
